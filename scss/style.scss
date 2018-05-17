@@ -21,26 +21,86 @@ html, body, p , ul{
 
     li {
         margin: 0;
-        display: inline;
+        display: inline;   
+           
+        &:first-child a:hover{
+            color: #234;
+            background: #c0ffee;
+        }  
+        &:last-child a:hover{
+            color: #bada55;
+            background: #987;
+        } 
+        &:nth-child(2) a:hover{
+            color: blue;
+            background: red;
+        } 
+        &:nth-child(3) a:hover{
+            color: pink;
+            background: green;
+        } 
+        &:nth-child(4) a:hover{
+            color: purple;
+            background: yellow;
+        } 
+        &:nth-child(5) a:hover {
+                color: wheat;
+                background: magenta;
+            }
         a {
             text-decoration: none;
-            color: $secondary-color;
-            background: $primary-color;
+            background: $secondary-color;
+            color: $primary-color;
             padding: $space/4 $space/2;
+            transition: all .5s;
+            
+            &:before{
+                content: "~";
+            }
         }
     }
+}
+
+blockquote::after, blockquote::before {
+    content: '"'
 }
 
 article {
     background: grayscale($primary-color);
     color: $secondary-color;
     padding: $space/2;
+    &::first-letter{
+        font-size: $width * 1.5;
+    }
+    &:first-child, &:last-child{
+        background: white;
+    }
+    &:nth-child(4n){
+        grid-column: 4/5; 
+    }
+    &:nth-child(4n+1){
+        grid-column: 1/2; 
+    }
+    &:nth-child(4n+2){
+        grid-column: 2/5;
+        color:$primary-color; 
+    }
+    &:nth-child(4n+3){
+        grid-column: 1/4;
+        color:$primary-color; 
+    }
+    // 4n+1 1, 5, 9 - 1/2
+    // 4n+3 3,7,11 - 1/4
+    // 4n+2 2,6,10 - 2/5
+    //4n 4,8,12 - 4/5
+    //2,3, 6,7, 10,11
+
 }
 main {
     width: $width*.9;
     margin: 0 auto;
-    background: lighten($secondary-color, 10%);
+    background: lighten($primary-color, 10%);
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-gap: $space/2;
   }

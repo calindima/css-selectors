@@ -1,0 +1,72 @@
+html, body, p, ul {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #d3a91f; }
+
+header {
+  padding: 40px 0 20px; }
+
+ul {
+  list-style: none; }
+  ul li {
+    margin: 0;
+    display: inline; }
+    ul li:first-child a:hover {
+      color: #234;
+      background: #c0ffee; }
+    ul li:last-child a:hover {
+      color: #bada55;
+      background: #987; }
+    ul li:nth-child(2) a:hover {
+      color: blue;
+      background: red; }
+    ul li:nth-child(3) a:hover {
+      color: pink;
+      background: green; }
+    ul li:nth-child(4) a:hover {
+      color: purple;
+      background: yellow; }
+    ul li:nth-child(5) a:hover {
+      color: wheat;
+      background: magenta; }
+    ul li a {
+      text-decoration: none;
+      background: #141212;
+      color: #d3a91f;
+      padding: 5px 10px;
+      transition: all .5s; }
+      ul li a:before {
+        content: "~"; }
+
+blockquote::after, blockquote::before {
+  content: '"'; }
+
+article {
+  background: #797979;
+  color: #141212;
+  padding: 10px; }
+  article::first-letter {
+    font-size: 150%; }
+  article:first-child, article:last-child {
+    background: white; }
+  article:nth-child(4n) {
+    grid-column: 4/5; }
+  article:nth-child(4n+1) {
+    grid-column: 1/2; }
+  article:nth-child(4n+2) {
+    grid-column: 2/5;
+    color: #d3a91f; }
+  article:nth-child(4n+3) {
+    grid-column: 1/4;
+    color: #d3a91f; }
+
+main {
+  width: 90%;
+  margin: 0 auto;
+  background: #e3be42;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px; }
